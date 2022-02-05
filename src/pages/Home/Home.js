@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Button } from "@mui/material";
 import { decrement, increment } from "../../redux/counter/counterSlice";
 import css from "./Home.module.css";
 
@@ -9,13 +10,13 @@ export const Home = () => {
 
 	return (
 		<div className={css.container}>
-			<button aria-label='Increment value' onClick={() => dispatch(increment())}>
+			<Button aria-label='Increment value' onClick={() => dispatch(increment())} variant='outlined'>
 				Increment
-			</button>
-			<span>{count}</span>
-			<button aria-label='Decrement value' onClick={() => dispatch(decrement())}>
+			</Button>
+			<p style={{ padding: "10px" }}>{count}</p>
+			<Button aria-label='Decrement value' onClick={() => dispatch(decrement())} variant='outlined'>
 				Decrement
-			</button>
+			</Button>
 		</div>
 	);
 };
