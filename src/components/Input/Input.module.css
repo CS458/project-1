@@ -1,0 +1,28 @@
+.inputText {
+	margin-bottom: 20px;
+}
+
+.inputText input {
+	width: 100%;
+	height: 45px;
+	background-color: #333;
+	color: white;
+	border-radius: 5px;
+	border: none;
+	outline: transparent;
+	text-indent: 18px;
+}
+
+.inputText input::-webkit-input-placeholder {
+	font-size: 1rem;
+	color: #999;
+}
+
+.inputText input::-moz-placeholder {
+	font-size: 1rem;
+	color: #999;
+	text-indent: 40px;
+}
+.warningInput {
+	display: none;
+}

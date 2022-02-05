@@ -1,3 +1,6 @@
 .container {
-	color: blue;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.6);
+	background-image: url("../../assets/background.jpeg");
 }

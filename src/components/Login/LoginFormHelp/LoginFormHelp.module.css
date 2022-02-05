@@ -1,0 +1,34 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.rememberMe {
+	font-size: 13px;
+	font-weight: 500;
+	display: flex;
+	gap: 6px;
+	align-items: center;
+	justify-content: center;
+}
+
+.rememberMe input {
+	color: #737373;
+}
+
+.rememberMe label {
+	display: block;
+	color: #b3b3b3;
+}
+
+.needHelp {
+	display: block;
+	color: #b3b3b3;
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.needHelp:hover {
+	text-decoration: underline;
+}
