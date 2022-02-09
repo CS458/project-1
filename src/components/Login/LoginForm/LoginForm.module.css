@@ -1,0 +1,64 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+.loginForm {
+	/* margin: 0 auto; */
+	width: 310px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 5px;
+	padding: 30px 70px 143px 70px;
+}
+
+.loginForm h1 {
+	color: white;
+	padding-bottom: 10px;
+}
+.middleContainer {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+	font-size: 0.8rem;
+}
+.grey {
+	color: #b3b3b3;
+}
+.help a {
+	text-decoration: none;
+}
+.help a:hover {
+	text-decoration: underline;
+}
+.newToNetflix {
+	margin-bottom: 10px;
+	color: #8c8c8c;
+}
+
+.signUpNow {
+	color: white;
+	text-decoration: none;
+}
+
+.signUpNow:hover {
+	text-decoration: underline;
+}
+
+.captchaText {
+	font-size: 0.8rem;
+	color: #8c8c8c;
+}
+
+.captchaText a {
+	text-decoration: none;
+}
+
+.captchaText a:hover {
+	text-decoration: underline;
+}
+
+.darkGrey {
+	color: #737373;
+}

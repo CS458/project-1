@@ -1,11 +1,12 @@
 import React from "react";
+import css from "./NetflixLogo.module.css";
 import netflixLogo from "../../assets/netflix-logo.png";
 
 const NetflixLogo = () => {
 	return (
-		<div className='logo'>
+		<div>
 			<a href='#'>
-				<img src={netflixLogo} className='netflixLogo' />
+				<img src={netflixLogo} className={css.netflixLogo} />
 			</a>
 		</div>
 	);

@@ -1,0 +1,22 @@
+.container {
+	display: flex;
+	gap: 6px;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.facebookIcon {
+	aspect-ratio: 1/1;
+	background-image: url("../../../assets/facebook-icon.png");
+	background-size: cover;
+	display: block;
+	height: 20px;
+}
+
+.link {
+	display: block;
+	color: #737373;
+	font-size: 13px;
+	font-weight: 500;
+}

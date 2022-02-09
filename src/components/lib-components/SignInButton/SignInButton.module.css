@@ -1,0 +1,12 @@
+.signInButton {
+	margin-top: 20px;
+	width: 100%;
+	padding: 13px;
+	border-radius: 5px;
+	background-color: red;
+	color: white;
+	border: none;
+	font-weight: bold;
+	font-size: 1.05rem;
+	cursor: pointer;
+}
