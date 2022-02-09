@@ -1,5 +1,5 @@
 import React from "react";
-import SignInButton from "../../lib-components/SignInButton/SignInButton";
+import SignInButton from "../../SignInButton/SignInButton";
 
 import Input from "../../lib-components/Input/Input";
 import LoginWithFacebook from "../LoginWithFacebook/LoginWithFacebook";
