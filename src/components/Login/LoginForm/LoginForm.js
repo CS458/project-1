@@ -16,7 +16,7 @@ const LoginForm = () => {
 				<Input warningMessage='Your password must contain between 4 and 60 characters.' placeholder='Password' type='password' id='inputPassword' name='password' />
 				<SignInButton />
 				<div className={css.middleContainer}>
-					<div>
+					<div className={css.rememberMeContainer}>
 						<input type='checkbox' />
 						<label className={css.grey}>Remember me</label>
 					</div>
