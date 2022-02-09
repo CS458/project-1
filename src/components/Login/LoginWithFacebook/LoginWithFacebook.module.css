@@ -1,6 +1,7 @@
 .container {
 	display: flex;
 	gap: 6px;
+	cursor: pointer;
 }
 
 .facebookIcon {
