@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@mui/material";
 import { decrement, increment } from "../../redux/counter/counterSlice";
-import css from "./Home.module.css";
 import { getTodos } from "../../redux/todo/todoThunks";
 
 //TODO: DELETE THIS COMPONENT IF NOT NEEDED
@@ -18,7 +17,7 @@ export const Home = () => {
 	}, [dispatch]);
 
 	return (
-		<div className={css.container}>
+		<div>
 			<Button aria-label='Increment value' onClick={() => dispatch(increment())} variant='outlined'>
 				Increment
 			</Button>

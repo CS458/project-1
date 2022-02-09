@@ -1,13 +1,19 @@
 import React from "react";
-import { LoginForm } from "../../components/Login/LoginForm/LoginForm";
-import { LoginHeader } from "../../components/Login/LoginHeader/LoginHeader";
-import css from "./Login.module.css";
+
+import BottomBanner from "../../components/BottomBanner/BottomBanner";
+import LoginForm from "../../components/LoginForm/LoginForm";
+import NetflixLogo from "../../components/NetflixLogo/NetflixLogo";
 
 export const Login = () => {
 	return (
-		<div className={css.container}>
-			<LoginHeader />
-			<LoginForm />
+		<div className='container'>
+			<div className='upperSubContainer'>
+				<NetflixLogo />
+				<LoginForm />
+			</div>
+			<div className='bottomSubContainer'>
+				<BottomBanner />
+			</div>
 		</div>
 	);
 };
