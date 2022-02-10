@@ -1,6 +1,6 @@
 import React from "react";
-import css from "./NetflixLogo.module.css";
 import netflixLogo from "../../assets/netflix-logo.png";
+import css from "./NetflixLogo.module.css";
 
 const NetflixLogo = () => {
 	return (

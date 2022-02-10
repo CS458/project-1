@@ -1,7 +1,6 @@
-import React from "react";
-import { LINKS, SUPPORT_LANGUAGES, CONTACT_PHONE_NUMBER } from "../../config/constants";
 import clsx from "clsx";
-
+import React from "react";
+import { CONTACT_PHONE_NUMBER, LINKS, SUPPORT_LANGUAGES } from "../../config/constants";
 import css from "./BottomBanner.module.css";
 
 const BottomBanner = () => {

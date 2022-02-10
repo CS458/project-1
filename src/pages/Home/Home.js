@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@mui/material";
-import { decrement, increment } from "../../redux/counter/counterSlice";
-import { getTodos } from "../../redux/todo/todoThunks";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { decrement, increment } from "../../redux/counter/counterSlice";
 
 //TODO: DELETE THIS COMPONENT IF NOT NEEDED
 // PURELY A TEST COMPONENT FOR NOW. ONLY TO SERVE AS EXAMPLE

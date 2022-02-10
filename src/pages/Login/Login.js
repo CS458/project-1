@@ -1,9 +1,7 @@
 import React from "react";
-
 import BottomBanner from "../../components/BottomBanner/BottomBanner";
 import LoginForm from "../../components/Login/LoginForm/LoginForm";
 import NetflixLogo from "../../components/NetflixLogo/NetflixLogo";
-
 import css from "./Login.module.css";
 
 export const Login = () => {

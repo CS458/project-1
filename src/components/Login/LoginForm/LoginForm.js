@@ -1,19 +1,25 @@
-import React from "react";
-import SignInButton from "../../SignInButton/SignInButton";
-
-import Input from "../../lib-components/Input/Input";
-import LoginWithFacebook from "../LoginWithFacebook/LoginWithFacebook";
-
-import css from "./LoginForm.module.css";
 import clsx from "clsx";
+import React from "react";
+import { validateEmail, validatePassword, validatePhone } from "../../../config/validations";
+import Input from "../../lib-components/Input/Input";
+import SignInButton from "../../SignInButton/SignInButton";
+import LoginWithFacebook from "../LoginWithFacebook/LoginWithFacebook";
+import css from "./LoginForm.module.css";
 
 const LoginForm = () => {
 	return (
 		<div className={css.container}>
 			<form className={css.loginForm}>
 				<h1>Sign In</h1>
-				<Input warningMessage='Please enter a valid email or phone number.' placeholder='Email or phone number' type='text' id='inputEmail' name='email' />
-				<Input warningMessage='Your password must contain between 4 and 60 characters.' placeholder='Password' type='password' id='inputPassword' name='password' />
+				<Input
+					warningMessage='Please enter a valid email or phone number.'
+					placeholder='Email or phone number'
+					type='text'
+					id='inputEmail'
+					name='email'
+					validate={(value) => validateEmail(value) || validatePhone(value)}
+				/>
+				<Input warningMessage='Your password must contain between 4 and 60 characters.' placeholder='Password' type='password' id='inputPassword' name='password' validate={validatePassword} />
 				<SignInButton />
 				<div className={css.middleContainer}>
 					<div className={css.rememberMeContainer}>
