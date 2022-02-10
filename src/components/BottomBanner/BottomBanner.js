@@ -25,7 +25,7 @@ const BottomBanner = () => {
 			<div>
 				<select className={clsx("fa", css.languageSelect)}>
 					{SUPPORT_LANGUAGES.map((language) => (
-						<option>
+						<option key={"option" + language.code}>
 							&#xf0ac;{"   "}
 							{language.name}
 						</option>

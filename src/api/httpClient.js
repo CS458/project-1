@@ -8,7 +8,7 @@ export const httpApi = {
 	put: async (url, data, options) => makeRequest("PUT", url, data, options),
 };
 
-const makeRequest = async (method, url, token, isBasic, data, options) => {
+const makeRequest = async (method, url, data, options) => {
 	let requestBody;
 	if (data) {
 		if (data instanceof FormData) {

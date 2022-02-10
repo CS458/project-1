@@ -1,9 +1,8 @@
 export const httpConfig = {
-	baseUrl: "https://jsonplaceholder.typicode.com",
+	baseUrl: "https://reqres.in",
 	endpoints: {
-		todos: {
-			get: "/todos",
-			todo: (id) => `/todos/${id}`,
+		userOperations: {
+			login: "/api/login",
 		},
 	},
 };

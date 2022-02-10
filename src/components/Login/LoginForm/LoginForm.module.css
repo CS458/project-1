@@ -12,6 +12,20 @@
 	padding: 50px 70px 110px 70px;
 }
 
+.loginFailed {
+	padding: 10px 20px;
+	background-color: #e87c03;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+.loginFailed a {
+	color: inherit;
+	text-decoration: underline;
+	background-color: transparent;
+}
+
 .loginForm h1 {
 	color: white;
 	padding-bottom: 20px;

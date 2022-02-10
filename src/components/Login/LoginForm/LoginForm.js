@@ -1,25 +1,67 @@
 import clsx from "clsx";
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { validateEmail, validatePassword, validatePhone } from "../../../config/validations";
 import Input from "../../lib-components/Input/Input";
 import SignInButton from "../../SignInButton/SignInButton";
 import LoginWithFacebook from "../LoginWithFacebook/LoginWithFacebook";
+import { login } from "../../../redux/user/userThunks";
 import css from "./LoginForm.module.css";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
+	const dispatch = useDispatch();
+	const user = useSelector((state) => state.user);
+
+	const [emailPhone, setEmailPhone] = useState("");
+	const [password, setPassword] = useState("");
+
+	const onFormSubmit = (e) => {
+		e.preventDefault();
+		dispatch(login({ email: emailPhone, password }));
+	};
+
+	const onEmailPhoneNumberChange = (e) => {
+		setEmailPhone(e.target.value);
+	};
+
+	const onPasswordChange = (e) => {
+		setPassword(e.target.value);
+	};
+
+	const isUserLoginFailed = user.email === "incorrect" && user.token === "incorrect";
+
 	return (
 		<div className={css.container}>
-			<form className={css.loginForm}>
+			<form className={css.loginForm} onSubmit={onFormSubmit}>
+				{isUserLoginFailed && (
+					<div className={css.loginFailed}>
+						<b>Incorrect password.</b> Please try again or you can <Link to='#'>Reset your password.</Link>
+					</div>
+				)}
 				<h1>Sign In</h1>
 				<Input
-					warningMessage='Please enter a valid email or phone number.'
-					placeholder='Email or phone number'
-					type='text'
 					id='inputEmail'
 					name='email'
+					onChange={onEmailPhoneNumberChange}
+					placeholder='Email or phone number'
+					type='text'
 					validate={(value) => validateEmail(value) || validatePhone(value)}
+					value={emailPhone}
+					warningMessage='Please enter a valid email or phone number.'
 				/>
-				<Input warningMessage='Your password must contain between 4 and 60 characters.' placeholder='Password' type='password' id='inputPassword' name='password' validate={validatePassword} />
+				<Input
+					id='inputPassword'
+					isPassword
+					name='password'
+					onChange={onPasswordChange}
+					placeholder='Password'
+					type='password'
+					validate={validatePassword}
+					value={password}
+					warningMessage='Your password must contain between 4 and 60 characters.'
+				/>
 				<SignInButton />
 				<div className={css.middleContainer}>
 					<div className={css.rememberMeContainer}>
