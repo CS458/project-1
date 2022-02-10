@@ -13,6 +13,10 @@ export const userReducer = createSlice({
 			state.email = action.payload.email;
 			state.token = action.payload.token;
 		},
+		logout: (state, action) => {
+			state.email = "";
+			state.token = "";
+		},
 	},
 });
 

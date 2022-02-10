@@ -1,18 +1,19 @@
 import clsx from "clsx";
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { validateEmail, validatePassword, validatePhone } from "../../../config/validations";
+import { login } from "../../../redux/user/userThunks";
 import Input from "../../lib-components/Input/Input";
+import { RoutesList } from "../../../routes/RoutesList";
 import SignInButton from "../../SignInButton/SignInButton";
 import LoginWithFacebook from "../LoginWithFacebook/LoginWithFacebook";
-import { login } from "../../../redux/user/userThunks";
 import css from "./LoginForm.module.css";
-import { Link } from "react-router-dom";
 
 const LoginForm = () => {
 	const dispatch = useDispatch();
 	const user = useSelector((state) => state.user);
+	const navigate = useNavigate();
 
 	const [emailPhone, setEmailPhone] = useState("");
 	const [password, setPassword] = useState("");
@@ -31,6 +32,12 @@ const LoginForm = () => {
 	};
 
 	const isUserLoginFailed = user.email === "incorrect" && user.token === "incorrect";
+
+	useEffect(() => {
+		if (user.token && user.email && !isUserLoginFailed) {
+			navigate(RoutesList.Home);
+		}
+	}, [user.token, user.email, isUserLoginFailed, navigate]);
 
 	return (
 		<div className={css.container}>
