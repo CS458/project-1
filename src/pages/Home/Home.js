@@ -14,7 +14,7 @@ export const Home = () => {
 		if ((!user.token || !user.email || user.email === "incorrect" || user.token === "incorrect") && !user.fbToken) {
 			navigate(RoutesList.Login);
 		}
-	}, [navigate, user.email, user.token]);
+	}, [navigate, user.email, user.fbToken, user.token]);
 
 	return (
 		<div className={css.container}>
