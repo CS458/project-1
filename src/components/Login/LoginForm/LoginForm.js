@@ -37,7 +37,7 @@ const LoginForm = () => {
 		if ((user.token && user.email && !isUserLoginFailed) || user.fbToken) {
 			navigate(RoutesList.Home);
 		}
-	}, [user.token, user.email, isUserLoginFailed, navigate]);
+	}, [user.token, user.email, isUserLoginFailed, navigate, user.fbToken]);
 
 	return (
 		<div className={css.container}>
