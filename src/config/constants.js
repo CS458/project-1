@@ -18,3 +18,8 @@ export const REGISTERED_USER = {
 	email: "eve.holt@reqres.in",
 	password: "cityslicka",
 };
+
+export const FB_REGISTERED_USER = {
+	email: "birmupzcnk_1644782397@tfbnw.net",
+	password: "facebooktest123!",
+};

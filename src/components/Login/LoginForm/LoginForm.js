@@ -34,7 +34,7 @@ const LoginForm = () => {
 	const isUserLoginFailed = user.email === "incorrect" && user.token === "incorrect";
 
 	useEffect(() => {
-		if (user.token && user.email && !isUserLoginFailed) {
+		if ((user.token && user.email && !isUserLoginFailed) || user.fbToken) {
 			navigate(RoutesList.Home);
 		}
 	}, [user.token, user.email, isUserLoginFailed, navigate]);
