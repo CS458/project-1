@@ -12,7 +12,3 @@ export const login = (req) => async (dispatch, getState) => {
 		dispatch(userActions.gotToken({ email: "incorrect", token: "incorrect" }));
 	}
 };
-
-export const logout = () => (dispatch, getState) => {
-	dispatch(userActions.gotToken({ email: "", token: "" }));
-};
