@@ -8,7 +8,6 @@ const LoginWithFacebook = (props) => {
 	const dispatch = useDispatch();
 
 	const responseFacebook = (response) => {
-		// console.log(response);
 		if (response.accessToken) {
 			dispatch(userActions.fbLogin({ email: response.email, fbToken: response.accessToken }));
 		} else {
