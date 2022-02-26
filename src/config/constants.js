@@ -16,6 +16,7 @@ export const CONTACT_PHONE_NUMBER = "1-844-542-4813";
 
 export const REGISTERED_USER = {
 	email: "eve.holt@reqres.in",
+	phone: "+905226623419",
 	password: "cityslicka",
 };
 
