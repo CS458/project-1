@@ -44,7 +44,7 @@ const LoginForm = () => {
 			<form className={css.loginForm} onSubmit={onFormSubmit}>
 				{isUserLoginFailed && (
 					<div className={css.loginFailed}>
-						<b>Incorrect password.</b> Please try again or you can <Link to='#'>Reset your password.</Link>
+						<b>Incorrect credentials.</b> Please try again.
 					</div>
 				)}
 				<h1>Sign In</h1>
