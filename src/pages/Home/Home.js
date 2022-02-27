@@ -18,8 +18,8 @@ export const Home = () => {
 
 	return (
 		<div className={css.container}>
-			<h1>Login Successful {user.fbToken && <span>(Logged in with Facebook)</span>}</h1>
-			<Link to={RoutesList.Login} onClick={() => dispatch(userActions.logout())}>
+			<h1 id='loginMsg'>Login Successful {user.fbToken && <span>(Logged in with Facebook)</span>}</h1>
+			<Link to={RoutesList.Login} onClick={() => dispatch(userActions.logout())} id='logoutBtn'>
 				Logout
 			</Link>
 		</div>

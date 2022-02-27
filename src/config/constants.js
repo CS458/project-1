@@ -21,6 +21,6 @@ export const REGISTERED_USER = {
 };
 
 export const FB_REGISTERED_USER = {
-	email: "birmupzcnk_1644782397@tfbnw.net",
+	email: "fb.test.bilkent@gmail.com",
 	password: "facebooktest123!",
 };

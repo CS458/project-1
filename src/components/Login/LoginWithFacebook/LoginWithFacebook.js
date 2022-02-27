@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import css from "./LoginWithFacebook.module.css";
@@ -17,14 +17,13 @@ const LoginWithFacebook = (props) => {
 
 	return (
 		<FacebookLogin
-			autoLoad
-			appId='448552373619838'
+			appId='503425251351581'
 			fields='name,email,picture'
 			scope='public_profile, email, user_friends'
 			callback={responseFacebook}
 			render={(renderProps) => {
 				return (
-					<div className={css.container} onClick={renderProps.onClick}>
+					<div id='fbLgn' className={css.container} onClick={renderProps.onClick}>
 						<i className={css.facebookIcon} />
 						<span className={css.link}>Login with Facebook</span>
 					</div>

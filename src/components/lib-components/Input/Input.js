@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import css from "./Input.module.css";
 
 const Input = (props) => {
-	const { warningMessage, placeholder, type, id, name, validate, value, onChange, isPassword } = props;
+	const { warningMessage, placeholder, type, id, name, validate, value, onChange, isPassword, checked } = props;
 	const [isValid, setIsValid] = useState(true);
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -30,6 +30,7 @@ const Input = (props) => {
 					style={{ borderBottom: isValid ? "none" : "2px solid #e87c03", borderTopRightRadius: isPassword ? "0px" : "5px", borderBottomRightRadius: isPassword ? "0px" : "5px" }}
 					value={value}
 					onChange={onChange}
+					checked={checked}
 				/>
 				{isPassword ? (
 					<div onClick={() => setIsPasswordVisible(!isPasswordVisible)} style={{ borderBottom: isValid ? "none" : "2px solid #e87c03" }}>

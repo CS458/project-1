@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { validateEmail, validatePassword, validatePhone } from "../../../config/validations";
 import { login } from "../../../redux/user/userThunks";
 import Input from "../../lib-components/Input/Input";
@@ -14,12 +14,20 @@ const LoginForm = () => {
 	const dispatch = useDispatch();
 	const user = useSelector((state) => state.user);
 	const navigate = useNavigate();
+	const checked = localStorage.getItem("rememberMe") === "true" || false;
+	const loginLocal = JSON.parse(localStorage.getItem("login")) || undefined;
 
-	const [emailPhone, setEmailPhone] = useState("");
-	const [password, setPassword] = useState("");
+	const [emailPhone, setEmailPhone] = useState(loginLocal?.email || "");
+	const [password, setPassword] = useState(loginLocal?.password || "");
+	const [rememberMe, setRememberMe] = useState(checked);
 
 	const onFormSubmit = (e) => {
 		e.preventDefault();
+		if (rememberMe) {
+			let loginInfo = JSON.stringify({ email: emailPhone, password });
+			localStorage.setItem("login", loginInfo);
+		} else localStorage.removeItem("login");
+		localStorage.setItem("rememberMe", rememberMe.toString());
 		dispatch(login({ email: emailPhone, password }));
 	};
 
@@ -29,6 +37,10 @@ const LoginForm = () => {
 
 	const onPasswordChange = (e) => {
 		setPassword(e.target.value);
+	};
+
+	const onRememberMe = () => {
+		setRememberMe(!rememberMe);
 	};
 
 	const isUserLoginFailed = user.email === "incorrect" && user.token === "incorrect";
@@ -44,10 +56,10 @@ const LoginForm = () => {
 			<form className={css.loginForm} onSubmit={onFormSubmit}>
 				{isUserLoginFailed && (
 					<div className={css.loginFailed}>
-						<b>Incorrect credentials.</b> Please try again.
+						<b id='incorrectPassword'>Incorrect credentials.</b> Please try again.
 					</div>
 				)}
-				<h1>Sign In</h1>
+				<h1 id='signInTitle'>Sign In</h1>
 				<Input
 					id='inputEmail'
 					name='email'
@@ -72,7 +84,7 @@ const LoginForm = () => {
 				<SignInButton />
 				<div className={css.middleContainer}>
 					<div className={css.rememberMeContainer}>
-						<input type='checkbox' />
+						<input id='rememberInput' type='checkbox' onChange={onRememberMe} checked={rememberMe} />
 						<label className={css.grey}>Remember me</label>
 					</div>
 					<div className={css.help}>
