@@ -3,15 +3,17 @@ const { Builder, By, until } = require("selenium-webdriver");
 const assert = require("assert");
 
 // focus on facebook login, user and non user cases
-(async function testCase4() {
-	let testCases = [
-		{ email: "fb.test.bilkent@gmail.com", password: "facebooktest123!", test: fbUser },
-		{ email: "wrong@gmail.com", password: "12345678", test: nonFbUser },
-	];
-	for (let test of testCases) {
-		await main(test.email, test.password, test.test);
-	}
-})();
+module.exports = {
+	test: async function () {
+		let testCases = [
+			{ email: "fb.test.bilkent@gmail.com", password: "facebooktest123!", test: fbUser },
+			{ email: "wrong@gmail.com", password: "12345678", test: nonFbUser },
+		];
+		for (let test of testCases) {
+			await main(test.email, test.password, test.test);
+		}
+	},
+};
 
 // tests use cases for when we log in with a facebook user and when we use wrong facebook credentials
 async function main(email, password, test) {

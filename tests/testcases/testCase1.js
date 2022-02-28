@@ -3,17 +3,19 @@ const { Builder, By, until } = require("selenium-webdriver");
 const assert = require("assert");
 
 // email and password fields validation, correctness and format
-(async function testCase1() {
-	let testCases = [
-		{ email: "eve.holt@reqres.in", password: "cityslicka", test: correctCredentials },
-		{ email: "eve.holt@reqres.in", password: "1122", test: wrongCredentials },
-		{ email: "wrong@gmail.com", password: "cityslicka", test: wrongCredentials },
-		{ email: "wrongEmail", password: "11", test: wrongFormat },
-	];
-	for (let test of testCases) {
-		await main(test.email, test.password, test.test);
-	}
-})();
+module.exports = {
+	test: async function () {
+		let testCases = [
+			{ email: "eve.holt@reqres.in", password: "cityslicka", test: correctCredentials },
+			{ email: "eve.holt@reqres.in", password: "1122", test: wrongCredentials },
+			{ email: "wrong@gmail.com", password: "cityslicka", test: wrongCredentials },
+			{ email: "wrongEmail", password: "11", test: wrongFormat },
+		];
+		for (let test of testCases) {
+			await main(test.email, test.password, test.test);
+		}
+	},
+};
 
 // checks all test cases one by one
 async function main(email, password, test) {

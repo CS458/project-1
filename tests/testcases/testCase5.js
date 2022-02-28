@@ -3,12 +3,14 @@ const { Builder, By, Key, until } = require("selenium-webdriver");
 const assert = require("assert");
 
 // prevent copy-paste of password
-(async function testCase5() {
-	let testCases = [{ email: "eve.holt@reqres.in", password: "cityslicka", test: copyTest }];
-	for (let test of testCases) {
-		await main(test.email, test.password, test.test);
-	}
-})();
+module.exports = {
+	test: async function () {
+		let testCases = [{ email: "eve.holt@reqres.in", password: "cityslicka", test: copyTest }];
+		for (let test of testCases) {
+			await main(test.email, test.password, test.test);
+		}
+	},
+};
 
 async function main(email, password, test) {
 	const driver = await new Builder().forBrowser("chrome").build();
