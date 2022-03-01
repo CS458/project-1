@@ -8,7 +8,7 @@ const assert = require("assert");
 module.exports = {
 	test: async function () {
 		const driver = await new Builder().forBrowser("chrome").build();
-		await driver.get("http://localhost:3000");
+		await driver.get("https://localhost:3000");
 		let emailInput = await driver.wait(until.elementLocated(By.id("inputEmail")), 5000);
 		let passwordInput = await driver.wait(until.elementLocated(By.id("inputPassword")), 5000);
 		let signIn = await driver.wait(until.elementLocated(By.id("signIn")), 5000);

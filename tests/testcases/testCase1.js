@@ -20,7 +20,7 @@ module.exports = {
 // checks all test cases one by one
 async function main(email, password, test) {
 	const driver = await new Builder().forBrowser("chrome").build();
-	await driver.get("http://localhost:3000");
+	await driver.get("https://localhost:3000");
 	let emailInput = await driver.wait(until.elementLocated(By.id("inputEmail")), 5000);
 	let passwordInput = await driver.wait(until.elementLocated(By.id("inputPassword")), 5000);
 	await emailInput.sendKeys(email);

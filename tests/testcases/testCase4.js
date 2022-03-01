@@ -18,7 +18,7 @@ module.exports = {
 // tests use cases for when we log in with a facebook user and when we use wrong facebook credentials
 async function main(email, password, test) {
 	const driver = await new Builder().forBrowser("chrome").build();
-	await driver.get("http://localhost:3000");
+	await driver.get("https://localhost:3000");
 	const originalWindow = await driver.getWindowHandle();
 	assert((await driver.getAllWindowHandles()).length === 1);
 	let fbLgn = await driver.wait(until.elementLocated(By.id("fbLgn")), 5000);
@@ -52,7 +52,6 @@ async function fbUser(driver, originalWindow, fbLgn) {
 	await driver.wait(until.urlContains("welcome"));
 	await driver.close();
 	await driver.switchTo().window(originalWindow);
-	await fbLgn.click();
 	let errMsg = await driver.wait(until.elementLocated(By.id("loginMsg")), 15000);
 	let msg = await errMsg.getText();
 	assert.strictEqual(msg, "Login Successful (Logged in with Facebook)");
