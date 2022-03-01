@@ -11,11 +11,11 @@ Using the Facebook API requires a secure HTTPS connection even on localhost. To 
 4. (Optional) if you are pushing this code to a repository, make sure to add these files to .gitignore
 
 Add the following to a .env file in the project root folder
-  HTTPS=true
-  SSL_CRT_FILE=localhost.pem
-  SSL_KEY_FILE=localhost-key.pem
-  HOST=localhost
-  PORT=8080
+* HTTPS=true
+* SSL_CRT_FILE=localhost.pem
+* SSL_KEY_FILE=localhost-key.pem
+* HOST=localhost
+* PORT=8080
 
 The setup is now done.
 
