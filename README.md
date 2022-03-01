@@ -15,7 +15,7 @@ Add the following to a .env file in the project root folder
 * SSL_CRT_FILE=localhost.pem
 * SSL_KEY_FILE=localhost-key.pem
 * HOST=localhost
-* PORT=8080
+* PORT=3000
 
 The setup is now done.
 
